@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Fun Quiz 🎉</title>
+    <meta name="description" content="A fun and interactive quiz game for kids to learn about colors, animals, and flowers.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Kids Fun Quiz 🎉</h1>
+    </header>
+
+    <main>
+        <!-- Home Screen -->
+        <section id="home-screen" class="screen active">
+            <h2>Choose a Category! 🎈</h2>
+            <div class="categories">
+                <button class="category-btn colors-btn" onclick="startQuiz('colors')">🎨 Colors Quiz</button>
+                <button class="category-btn animals-btn" onclick="startQuiz('animals')">🐶 Animals Quiz</button>
+                <button class="category-btn flowers-btn" onclick="startQuiz('flowers')">🌸 Flowers Quiz</button>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <h2 id="category-title">Quiz</h2>
+                <div class="timer">⏳ <span id="time">15</span>s</div>
+            </div>
+            
+            <div class="progress-container">
+                <p id="progress-text">Question 1 of 10</p>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h3 id="question-text">Question goes here?</h3>
+                <div id="options-container" class="options-container">
+                    <!-- Options injected here -->
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button id="prev-btn" class="control-btn" onclick="prevQuestion()" disabled>⬅️ Previous</button>
+                <button id="next-btn" class="control-btn" onclick="nextQuestion()" disabled>Next ➡️</button>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="screen">
+            <h2>Quiz Completed! 🌟</h2>
+            <div class="score-card">
+                <h3 id="final-score">8/10 ⭐</h3>
+                <p id="feedback-message">Excellent! 🌟</p>
+            </div>
+            <div class="result-controls">
+                <button class="result-btn play-again-btn" onclick="playAgain()">Play Again 🔄</button>
+                <button class="result-btn home-btn" onclick="goHome()">Choose Another Category 🏠</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made for Kids Learning ❤️</p>
+    </footer>
+
+    <audio id="correct-sound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=success-1-6297.mp3"></audio>
+    <audio id="wrong-sound" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=error-126627.mp3"></audio>
+    <audio id="click-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_78fa730e10.mp3?filename=pop-39222.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
